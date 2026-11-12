@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.Cuerpo{
+	background-image: URL("../IMG/Diseño_de_apps.png");
+	background-repeat: no-repeat;
+	background-size: 1350px;
+
+}
+.Contain{
+	margin: 100px;
+}
+.Coverage{
+	margin-left: -35px;
+	width: 1200px;
+	height: 555px;
+	background: rgba(255, 255, 255, 0.7);
+}
+.Portada{
+	text-align: center;
+	font-size: 25px;
+}
+.Portada > a{
+	text-decoration: none;
+	color: #48e;
+}
+.Unidades{
+	margin: 50px auto;
+	border-spacing: 15px;
+}
+[Unidades__T]{
+	padding: 15px 5px;
+	background: #fff;
+	border: 2px outset #46e;
+	font-size: 20px;
+	text-align: center;
+	width: 150px;
+}
+[Unidades__T] > a{
+	text-decoration: none;
+	color: #000;
+}
+[Unidades__T] > a:visited{
+	color: #48e;
+}
