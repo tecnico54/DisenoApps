@@ -53,31 +53,32 @@ function quest(){
         i_Curso.style.background = "#fff";
     }
     //Validad el estudiante repetido:
-    if(listaArrayAcademica.includes(student)){
-        alert("El estudiante " + student + " ya existe");
+    let existe = listaArrayAcademica.find(alumno => alumno.student === student);
+    if(existe){
+        alert("El estudiante " + student + " no fue encotrado");
         i_Nombre.style.background = "#f00";
         i_Nombre.focus();
         return;
     }
     //Añadir estudiante al array:
-    listaArrayAcademica.push(student);
-    //Añadir el contenido:
     listaArrayAcademica.push({
         student,
         age,
         course
     });
     //Añadir en la tabla:
-    listaArrayAcademica.forEach(lista => {
-        tabla.style.background = "#f0e"
-        tabla.innerHTML = `
+    tabla.innerHTML = "";
+    tabla.style.background = "#fff";
+    for(let i = 0; i < listaArrayAcademica.length; i++){
+        tabla.innerHTML += `
             <tr>
-                <td style="border: 2px outset #008000;">${lista.student}</td>
-                <td style="border: 2px outset #008000;">${lista.age}</td>
-                <td style="border: 2px outset #008000;">${lista.course}</td>
+                <td style="border: 2px outset #008000;">${listaArrayAcademica[i].student}</td>
+                <td style="border: 2px outset #008000;">${listaArrayAcademica[i].age}</td>
+                <td style="border: 2px outset #008000;">${listaArrayAcademica[i].course}</td>
             </tr>
         `;
-    })
+    }
+    console.log(listaArrayAcademica);
     //Limpiar campos:
     i_Nombre.value = "";
     i_Edad.value = "";
